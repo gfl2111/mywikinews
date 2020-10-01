@@ -1,21 +1,29 @@
 const morgan = require("morgan");
 const express = require("express");
 const app = express();
+const layout = require("./views/layout.js")
+const { db } = require('./models')
+const path = require("path");
 
-app.listen(1337);
+app.listen(3000);
+
+db.authenticate()
+    .then(() => {
+        console.log('connected to the database');
+    })
 
 //Body parsing middleware
 app.use(express.urlencoded({ extended:false}));
 
 //Static middleware. Serves up static files from some kind of public folder.
-app.use(express.static(__dirname + "./public"));
+app.use(express.static(path.join(__dirname, "./public")));
 
 //Logging middleware.
 app.use(morgan('dev'));
 
 //Body parsing middleware
 app.get('/', (req, res) =>{
-    res.send('<h1>hello world</h1>')
+    res.send(layout())
 })
 
 //Body parsing middleware...use 'use' when their's another file handling our routes!!!
