@@ -2,12 +2,13 @@ const express = require("express");
 const morgan = require("morgan");
 const app = express();
 
+app.listen(1337);
 
 //Body parsing middleware
 app.use(express.urlencoded({ extended:false}));
 
 //Static middleware. Serves up static files from some kind of public folder.
-app.use(express.static(__dirname));
+app.use(express.static(__dirname + "./public"));
 
 //Logging middleware.
 app.use(morgan('dev'));
