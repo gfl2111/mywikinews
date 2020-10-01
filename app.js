@@ -19,7 +19,7 @@ app.get('/', (req, res) =>{
 })
 
 //Body parsing middleware...use 'use' when their's another file handling our routes!!!
-// app.use(function (req, res, next) {  
+// app.use(function (req, res, next) {
 //     console.log('Time:', Date.now())
 //     next()
 //   })

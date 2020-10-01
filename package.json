@@ -2,9 +2,10 @@
   "name": "wikistack",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js", //concered that it wont read the rest of the files later index.js originally
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./Users/kadecahe/Documents/Grace-Hopper/wikistack/app.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
